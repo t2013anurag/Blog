@@ -27,6 +27,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="viewPost">
+        <s:complexType />
+      </s:element>
+      <s:element name="viewPostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="viewPostResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -41,6 +58,12 @@
   <wsdl:message name="validateUserSoapOut">
     <wsdl:part name="parameters" element="tns:validateUserResponse" />
   </wsdl:message>
+  <wsdl:message name="viewPostSoapIn">
+    <wsdl:part name="parameters" element="tns:viewPost" />
+  </wsdl:message>
+  <wsdl:message name="viewPostSoapOut">
+    <wsdl:part name="parameters" element="tns:viewPostResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebService1Soap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -49,6 +72,10 @@
     <wsdl:operation name="validateUser">
       <wsdl:input message="tns:validateUserSoapIn" />
       <wsdl:output message="tns:validateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="viewPost">
+      <wsdl:input message="tns:viewPostSoapIn" />
+      <wsdl:output message="tns:viewPostSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
@@ -71,6 +98,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="viewPost">
+      <soap:operation soapAction="http://tempuri.org/viewPost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -85,6 +121,15 @@
     </wsdl:operation>
     <wsdl:operation name="validateUser">
       <soap12:operation soapAction="http://tempuri.org/validateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewPost">
+      <soap12:operation soapAction="http://tempuri.org/viewPost" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

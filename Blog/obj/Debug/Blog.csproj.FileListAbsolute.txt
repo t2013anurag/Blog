@@ -1,6 +1,5 @@
 c:\users\anurag\documents\visual studio 2013\Projects\Blog\Blog\bin\Blog.dll.config
 c:\users\anurag\documents\visual studio 2013\Projects\Blog\Blog\bin\Blog.dll
 c:\users\anurag\documents\visual studio 2013\Projects\Blog\Blog\bin\Blog.pdb
-c:\users\anurag\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.csprojResolveAssemblyReference.cache
 c:\users\anurag\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.dll
 c:\users\anurag\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.pdb

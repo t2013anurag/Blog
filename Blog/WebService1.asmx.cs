@@ -34,5 +34,17 @@ namespace Blog
             return dr.Read();
             conn.Close();
         }
+        [WebMethod]
+        public DataSet viewPost()
+        {
+            OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\Anurag\\Documents\\Visual Studio 2013\\Projects\\Blog\\db\\Database2.mdb");
+            conn.Open();
+            OleDbDataAdapter da = new OleDbDataAdapter("select * from createblog",conn);
+            DataSet DS = new DataSet();
+            da.Fill(DS);
+            return DS;
+            conn.Close();
+            conn = null;
+        }
     }
 }
