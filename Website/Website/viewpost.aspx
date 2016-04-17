@@ -1,12 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="viewpost.aspx.cs" Inherits="Website.viewpost" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="viewpost.aspx.cs" Inherits="Website.view" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-   
 <head runat="server">
-    <title>View Post</title>
-    <link rel="stylesheet" href="materialize.min.css" />
+    <title>View</title>
+      <link rel="stylesheet" href="materialize.min.css" />
     <style>
         .row .col {
             float: left;
@@ -16,7 +15,7 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+     <form id="form1" runat="server">
     <div>
      <nav>
     <div class="nav-wrapper">
@@ -30,9 +29,7 @@
     </div>
   </nav>
     </div>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-        <asp:ListView ID="ListView1" runat="server">
+   <asp:ListView ID="ListView1" runat="server">
             <ItemTemplate>
     <tr runat="server">
       <td runat="server"> 
@@ -45,10 +42,10 @@
                         <h6 id="title1" runat="server"><%#Eval("title") %></h6>
                         <p runat="server"><%#Eval("description") %></p><br><br>
                     </div>
-                    <div class="card-action">
+                    <!--div class="card-action">
                         <a href="#">View</a>
                         <a href="#">Delete</a>
-                    </div>
+                    </!--div-->
                 </div>
             </div>
         </div>
