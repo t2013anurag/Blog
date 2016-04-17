@@ -3,3 +3,4 @@ c:\users\anurag\documents\visual studio 2013\Projects\Blog\Blog\bin\Blog.dll
 c:\users\anurag\documents\visual studio 2013\Projects\Blog\Blog\bin\Blog.pdb
 c:\users\anurag\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.dll
 c:\users\anurag\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.pdb
+C:\Users\Anurag\Documents\Visual Studio 2013\Projects\Blog\Blog\obj\Debug\Blog.csprojResolveAssemblyReference.cache

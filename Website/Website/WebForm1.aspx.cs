@@ -13,5 +13,22 @@ namespace Website
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            ServiceReference1.WebService1SoapClient ser = new ServiceReference1.WebService1SoapClient();
+            
+            Boolean res = ser.createPost(TextBox1.Text, TextBox2.Text, TextBox3.Text);
+            if (res)
+            {
+                Label4.Text = "Created the post successfully";
+            }
+            else
+            {
+                Label4.Text = "We are facing an error while creating the post. Please try again after some time!";
+            }
+            
+            
+        }
     }
 }

@@ -36,6 +36,20 @@ namespace Website.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/viewPost", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> viewPostAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/createPost", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool createPost(string author, string title, string description);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/createPost", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> createPostAsync(string author, string title, string description);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/deletePost", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool deletePost(string title);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/deletePost", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> deletePostAsync(string title);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -87,6 +101,22 @@ namespace Website.ServiceReference1 {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> viewPostAsync() {
             return base.Channel.viewPostAsync();
+        }
+        
+        public bool createPost(string author, string title, string description) {
+            return base.Channel.createPost(author, title, description);
+        }
+        
+        public System.Threading.Tasks.Task<bool> createPostAsync(string author, string title, string description) {
+            return base.Channel.createPostAsync(author, title, description);
+        }
+        
+        public bool deletePost(string title) {
+            return base.Channel.deletePost(title);
+        }
+        
+        public System.Threading.Tasks.Task<bool> deletePostAsync(string title) {
+            return base.Channel.deletePostAsync(title);
         }
     }
 }

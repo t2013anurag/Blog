@@ -10,6 +10,8 @@
     <form id="form1" runat="server">
     <div>
     
+        <asp:Label ID="Label4" runat="server"></asp:Label>
+    
     </div>
         <asp:Label ID="Label1" runat="server" Text="Your Name"></asp:Label><br>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -19,9 +21,11 @@
         </p>
         <p>
             <asp:Label ID="Label3" runat="server" Text="Description"></asp:Label><br>
-            <textarea id="TextArea1" cols="20" name="S1" rows="10"></textarea></p>
-    </form>
+            <asp:TextBox ID="TextBox3" runat="server" Height="132px" Width="123px"></asp:TextBox>
+        </p>
     <p>
-        <input id="Submit1" type="submit" value="Create Blog" /></p>
-</body>
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Create Blog" />
+        </p>
+    </form>
+    </body>
 </html>

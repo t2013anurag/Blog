@@ -39,12 +39,40 @@ namespace Blog
         {
             OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\Anurag\\Documents\\Visual Studio 2013\\Projects\\Blog\\db\\Database2.mdb");
             conn.Open();
-            OleDbDataAdapter da = new OleDbDataAdapter("select * from createblog",conn);
+            OleDbDataAdapter da = new OleDbDataAdapter("select * from createpost",conn);
             DataSet DS = new DataSet();
             da.Fill(DS);
             return DS;
             conn.Close();
             conn = null;
+        }
+        [WebMethod]
+        public Boolean createPost(string author, string title, string description)
+        {
+            OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\Anurag\\Documents\\Visual Studio 2013\\Projects\\Blog\\db\\Database2.mdb");
+            conn.Open();
+            OleDbDataAdapter da = new OleDbDataAdapter();
+            string sql = "insert into createpost(author, title, description) values ('" + author + "' ,'" + title + "','" + description + "')";
+            da.InsertCommand = conn.CreateCommand();
+            da.InsertCommand.CommandText = sql;
+            if (da.InsertCommand.ExecuteNonQuery() > 0)
+                return true;
+            else
+                return false;
+        }
+        [WebMethod]
+        public Boolean deletePost(string title)
+        {
+            OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\Anurag\\Documents\\Visual Studio 2013\\Projects\\Blog\\db\\Database2.mdb");
+            conn.Open();     
+            OleDbDataAdapter oledbAdapter = new OleDbDataAdapter();
+            string sql = "delete from createblog where title = '" + title + "'";
+            oledbAdapter.DeleteCommand = conn.CreateCommand();
+            oledbAdapter.DeleteCommand.CommandText = sql;
+            if (oledbAdapter.DeleteCommand.ExecuteNonQuery()>0)
+                return true;
+            else
+                return false;            
         }
     }
 }
