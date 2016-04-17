@@ -59,14 +59,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="WebForm1.aspx" />
+    <Content Include="createpost.aspx" />
+    <Content Include="materialize.min.css" />
+    <Content Include="materialize.min.js" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <Content Include="login.aspx" />
     <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference1\configuration.svcinfo" />
     <None Include="Service References\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="viewpost.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -76,12 +80,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="createpost.aspx.cs">
+      <DependentUpon>createpost.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="createpost.aspx.designer.cs">
+      <DependentUpon>createpost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewpost.aspx.cs">
+      <DependentUpon>viewpost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewpost.aspx.designer.cs">
+      <DependentUpon>viewpost.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

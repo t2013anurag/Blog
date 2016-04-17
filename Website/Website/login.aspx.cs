@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Website
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class WebForm2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,18 +17,15 @@ namespace Website
         protected void Button1_Click(object sender, EventArgs e)
         {
             ServiceReference1.WebService1SoapClient ser = new ServiceReference1.WebService1SoapClient();
-            
-            Boolean res = ser.createPost(TextBox1.Text, TextBox2.Text, TextBox3.Text);
-            if (res)
+            Boolean check =  ser.validateUser(TextBox1.Text, TextBox2.Text);
+            if (check)
             {
-                Label4.Text = "Created the post successfully";
+                Response.Redirect("createpost.aspx");
             }
             else
             {
-                Label4.Text = "We are facing an error while creating the post. Please try again after some time!";
+                Label1.Text = "Invalid Login Details! Please try again";
             }
-            
-            
         }
     }
 }
