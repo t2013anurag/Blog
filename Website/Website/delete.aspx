@@ -13,6 +13,11 @@
             box-sizing: border-box;
             padding: 0 17.75rem;
         }
+        #Label1 {
+                color :#ee6e73;
+                font-weight: 300;
+                font-size : 26px;
+        }
     </style>
 </head>
 <body>
@@ -27,14 +32,15 @@
         <li><a href="viewpost.aspx">View</a></li>
         <li><a href="delete.aspx">Delete</a></li>
       </ul>
+        
     </div>
   </nav>
     </div>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+         
          <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" enableEventValidation="false" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
           
               <Columns>
-        <asp:BoundField DataField="author" HeaderText="author" ItemStyle-Width="150" />
+        <asp:BoundField DataField="author" HeaderText="Author" ItemStyle-Width="150" />
         <asp:BoundField DataField="title" HeaderText="Title" ItemStyle-Width="150" />
         <asp:BoundField DataField="description" HeaderText="Description" ItemStyle-Width="150" />
    
@@ -45,6 +51,6 @@
     </asp:GridView> 
         <asp:LinkButton ID="lnkDummy" runat="server"></asp:LinkButton>
     </form>
- 
+ <asp:Label ID="Label1" runat="server"></asp:Label>
  </body>
 </html>

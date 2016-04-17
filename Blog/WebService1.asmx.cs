@@ -66,7 +66,7 @@ namespace Blog
             OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\Anurag\\Documents\\Visual Studio 2013\\Projects\\Blog\\db\\Database2.mdb");
             conn.Open();     
             OleDbDataAdapter oledbAdapter = new OleDbDataAdapter();
-            string sql = "delete from createblog where title = '" + title + "'";
+            string sql = "delete from createpost where title = '" + title + "'";
             oledbAdapter.DeleteCommand = conn.CreateCommand();
             oledbAdapter.DeleteCommand.CommandText = sql;
             if (oledbAdapter.DeleteCommand.ExecuteNonQuery()>0)

@@ -22,6 +22,7 @@ namespace Website
 
         protected void OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
         {
+          
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Select$" + e.Row.RowIndex);
@@ -32,13 +33,27 @@ namespace Website
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = GridView1.SelectedRow.RowIndex;
-            string author = GridView1.SelectedRow.Cells[0].Text;
-            string title = GridView1.SelectedRow.Cells[1].Text;
-            Label1.Text = author + title;
-            string message = "Row Index: " + index + "\\nName: " + author + "\\nCountry: " + title;
-            
-            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + message + "');", true);
+            try
+            {
+                int index = GridView1.SelectedRow.RowIndex;
+                string author = GridView1.SelectedRow.Cells[0].Text;
+                string title = GridView1.SelectedRow.Cells[1].Text;
+                Label1.Text = "Hello";
+                Boolean del = ser.deletePost(title);
+                if (del)
+                {
+                    Label1.Text = "Deleted Successfully! Please refresh the page";
+                }
+                else
+                {
+                    Label1.Text = "An error occured while deleting the post!";
+                }
+            }
+            catch (Exception ex)
+            {
+                Label1.Text = "Please refresh the page to see the changes!";
+            }
+            //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + message + "');", true);
         }
     }
 }
