@@ -1,9 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="delete.aspx.cs" Inherits="Website.viewpost"  EnableEventValidation="false"%>
-
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
-   
 <head runat="server">
     <title>View Post</title>
     <link rel="stylesheet" href="materialize.min.css" />
@@ -32,25 +29,18 @@
         <li><a href="viewpost.aspx">View</a></li>
         <li><a href="delete.aspx">Delete</a></li>
       </ul>
-        
     </div>
   </nav>
     </div>
-         
          <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" enableEventValidation="false" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-          
-              <Columns>
-        <asp:BoundField DataField="author" HeaderText="Author" ItemStyle-Width="150" />
-        <asp:BoundField DataField="title" HeaderText="Title" ItemStyle-Width="150" />
-        <asp:BoundField DataField="description" HeaderText="Description" ItemStyle-Width="150" />
-   
-
-    </Columns>
-
-                  
-    </asp:GridView> 
+            <Columns>
+               <asp:BoundField DataField="author" HeaderText="Author" ItemStyle-Width="150" />
+               <asp:BoundField DataField="title" HeaderText="Title" ItemStyle-Width="150" />
+               <asp:BoundField DataField="description" HeaderText="Description" ItemStyle-Width="150" />
+            </Columns>
+         </asp:GridView> 
         <asp:LinkButton ID="lnkDummy" runat="server"></asp:LinkButton>
     </form>
  <asp:Label ID="Label1" runat="server"></asp:Label>
- </body>
+</body>
 </html>
